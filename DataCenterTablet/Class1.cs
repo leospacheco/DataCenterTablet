@@ -60,10 +60,10 @@ namespace DataCenterTablet
 
             // --- 2. SERVERS ---
             GUI.Label(new Rect(win.x + 20, win.y + 145, 500, 20), "<b>2. COMPUTING UNITS (SERVERS)</b>");
-            DrawHardwareRow(win, 170, "System X 3U", 0, "System X 7U", 1, 1500, 2800, PlayerManager.ObjectInHand.Server1U);
-            DrawHardwareRow(win, 215, "RISC 3U", 2, "RISC 7U", 3, 3500, 6200, PlayerManager.ObjectInHand.Server1U);
-            DrawHardwareRow(win, 260, "GPU Server", 4, "GPU Ultra", 5, 12000, 25000, PlayerManager.ObjectInHand.Server3U);
-            DrawHardwareRow(win, 305, "Mainframe", 6, "Mainframe Pro", 7, 8500, 14000, PlayerManager.ObjectInHand.Server2U);
+            DrawHardwareRow(win, 170, "System X 3U", 0, "System X 7U", 1, 400, 1600, PlayerManager.ObjectInHand.Server1U);
+            DrawHardwareRow(win, 215, "RISC 3U", 2, "RISC 7U", 3, 450, 1750, PlayerManager.ObjectInHand.Server1U);
+            DrawHardwareRow(win, 260, "GPU 3U", 4, "GPU 7U", 5, 550, 2200, PlayerManager.ObjectInHand.Server3U);
+            DrawHardwareRow(win, 305, "Mainframe 3U", 6, "Mainframe 7U", 7, 850, 2000, PlayerManager.ObjectInHand.Server2U);
 
             // --- 3. NETWORKING ---
             GUI.Label(new Rect(win.x + 20, win.y + 360, 500, 20), "<b>3. NETWORK SWITCHES</b>");
