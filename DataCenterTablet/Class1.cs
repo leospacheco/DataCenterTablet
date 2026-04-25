@@ -4,7 +4,7 @@ using Il2Cpp;
 using UnityEngine.InputSystem;
 using System.Collections;
 
-[assembly: MelonInfo(typeof(DataCenterTablet.Main), "Data Center Logistics Tablet", "0.9.0", "Lzinsp")]
+[assembly: MelonInfo(typeof(DataCenterTablet.Main), "Data Center Logistics Tablet", "0.9.2", "Lzinsp")]
 [assembly: MelonGame(null, null)]
 
 namespace DataCenterTablet
@@ -105,10 +105,19 @@ namespace DataCenterTablet
         {
             var shop = Object.FindObjectOfType<ComputerShop>();
             if (shop == null) return;
+
             Il2CppSystem.Nullable<Color> finalC = new Il2CppSystem.Nullable<Color>();
             if (color.HasValue) { finalC.value = color.Value; finalC.hasValue = true; }
+
             shop.SpawnNewCartItem(id, price, type, name, finalC);
-            shop.UpdateCartTotal(); shop.ButtonCheckOut();
+            shop.UpdateCartTotal();
+            shop.ButtonCheckOut();
+
+            // --- NOVA LINHA PARA CORRIGIR O BUG DO SAVE ---
+            // Procura o sistema de save e força a gravação imediata
+            SaveSystem.SaveGame(null, null);
+            // ----------------------------------------------
+
             MelonCoroutines.Start(TeleportToPlayer());
         }
 
